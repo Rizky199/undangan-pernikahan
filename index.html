@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -30,7 +30,7 @@
   body{
     background:var(--ivory);
     color:var(--charcoal);
-    font-family:'EB Garamond', serif;
+    font-family:'Playfair Display', serif;
     font-size:18px;
     line-height:1.6;
     overflow-x:hidden;
@@ -43,7 +43,7 @@
   }
 
   .eyebrow{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
     letter-spacing:0.35em;
     text-transform:uppercase;
     font-size:13px;
@@ -52,7 +52,7 @@
   }
 
   .script{
-    font-family:'Alex Brush', cursive;
+    font-family:'Playfair Display', serif; font-style:italic;
     font-weight:400;
   }
 
@@ -113,13 +113,13 @@
   .cover-frame::after{bottom:-8px;right:-8px;border-left:none;border-top:none;}
   .cover-eyebrow{color:var(--gold-light);}
   .cover-names{
-    font-family:'Alex Brush', cursive;
+    font-family:'Playfair Display', serif; font-style:italic;
     font-size:clamp(48px,12vw,68px);
     margin:18px 0 6px;
     color:var(--ivory);
   }
   .cover-sub{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
     font-size:15px;
     letter-spacing:0.08em;
     color:var(--gold-light);
@@ -147,7 +147,7 @@
     border:1px solid var(--gold);
     color:var(--ivory);
     padding:12px 26px;
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
     letter-spacing:0.18em;
     text-transform:uppercase;
     font-size:13px;
@@ -200,7 +200,7 @@
   }
   .photo-frame img{width:100%;height:100%;object-fit:cover;}
   .photo-placeholder{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
     font-size:12px;
     color:var(--gold);
     text-align:center;
@@ -211,7 +211,7 @@
   .couple-parents{font-size:15px;color:#5c5346;}
   .couple-amp{
     text-align:center;
-    font-family:'Alex Brush', cursive;
+    font-family:'Playfair Display', serif; font-style:italic;
     font-size:34px;
     color:var(--gold);
     margin:6px 0;
@@ -263,7 +263,7 @@
     padding:10px 22px;
     border:1px solid var(--maroon);
     color:var(--maroon-deep);
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
     letter-spacing:.1em;
     text-transform:uppercase;
     font-size:13px;
@@ -324,7 +324,7 @@
     padding:12px 14px;
     border:1px solid var(--line);
     background:var(--ivory);
-    font-family:'EB Garamond', serif;
+    font-family:'Playfair Display', serif;
     font-size:16px;
     color:var(--charcoal);
   }
@@ -335,7 +335,7 @@
     background:var(--maroon);
     color:var(--ivory);
     border:none;
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
     letter-spacing:.14em;
     text-transform:uppercase;
     font-size:14px;
@@ -373,7 +373,7 @@
     padding:9px 20px;
     border:1px solid var(--maroon);
     color:var(--maroon-deep);
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
     letter-spacing:.1em;
     text-transform:uppercase;
     font-size:12px;
@@ -475,7 +475,7 @@
           <img src="images/bride.jpg" alt="Foto Mempelai Wanita" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'photo-placeholder',innerHTML:'Taruh foto di<br>images/bride.jpg'}))">
         </div>
         <div class="couple-name">Juliani Safitri</div>
-        <div class="couple-parents">Putri dari<br>Bapak Sumanto</div>
+        <div class="couple-parents">Putri dari<br>Alm. Bapak Sumanto &amp; Ibu Suwarti</div>
       </div>
       <div class="couple-amp">&amp;</div>
       <div class="couple-card">
@@ -483,7 +483,7 @@
           <img src="images/groom.jpg" alt="Foto Mempelai Pria" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'photo-placeholder',innerHTML:'Taruh foto di<br>images/groom.jpg'}))">
         </div>
         <div class="couple-name">Rizky Dwi Ferdian</div>
-        <div class="couple-parents">Putra dari<br>Bapak Pirngadi</div>
+        <div class="couple-parents">Putra dari<br>Bapak Pirngadi &amp; Ibu Amrinah</div>
       </div>
     </div>
   </section>
@@ -508,7 +508,7 @@
     <div class="event-card">
       <h3>Akad Nikah</h3>
       <p class="event-detail">Rabu, 29 Juli 2026</p>
-      <p class="event-detail">08.00 — 10.00 WIB</p>
+      <p class="event-detail">08.00 WIB</p>
       <p class="event-detail">Rt. 02, Rw. 05, Dsn. Tabuhan, Ds. Wareng,<br>Kec. Punung, Kab. Pacitan, Jawa Timur</p>
       <a class="map-btn" href="https://maps.google.com/?q=Yogyakarta" target="_blank" rel="noopener">Lihat Lokasi</a>
     </div>
@@ -516,7 +516,7 @@
     <div class="event-card">
       <h3>Resepsi</h3>
       <p class="event-detail">Rabu, 29 Juli 2026</p>
-      <p class="event-detail">11.00 — 14.00 WIB</p>
+      <p class="event-detail">11.00 WIB</p>
       <p class="event-detail">Rt. 02, Rw. 05, Dsn. Tabuhan, Ds. Wareng,<br>Kec. Punung, Kab. Pacitan, Jawa Timur</p>
       <a class="map-btn" href="https://maps.google.com/?q=Yogyakarta" target="_blank" rel="noopener">Lihat Lokasi</a>
     </div>
