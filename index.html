@@ -354,21 +354,82 @@
   .wish-empty{font-size:15px;color:#8a7f6c;font-style:italic;}
 
   /* Gift */
-  .gift-card{
-    background:var(--ivory-soft);
-    border:1px solid var(--line);
-    padding:28px;
-    margin-top:20px;
-    text-align:center;
-  }
-  .gift-bank{font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;}
-  .gift-number{
+  .gift-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:24px;
+    padding:14px 30px;
+    background:var(--maroon);
+    color:var(--ivory);
+    border:none;
+    border-radius:30px;
     font-family:'Playfair Display', serif;
-    font-size:24px;
-    margin:6px 0;
-    color:var(--maroon-deep);
+    letter-spacing:.08em;
+    font-size:15px;
+    cursor:pointer;
+    transition:background .3s;
   }
-  .gift-owner{font-size:15px;color:#4a4235;margin-bottom:14px;}
+  .gift-btn:hover{background:var(--maroon-deep);}
+  .gift-btn svg{width:18px;height:18px;}
+
+  .bank-card{
+    max-width:340px;
+    margin:26px auto 0;
+    padding:26px 24px;
+    border-radius:16px;
+    background:linear-gradient(135deg, #fdfbf6 0%, #f2e9d6 100%);
+    border:1px solid var(--line);
+    box-shadow:0 10px 30px rgba(84,40,50,0.12);
+    text-align:left;
+    position:relative;
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    padding-top:0;
+    padding-bottom:0;
+    margin-top:0;
+    transition:max-height .5s ease, opacity .4s ease, padding .5s ease, margin .5s ease;
+  }
+  .bank-card.show{
+    max-height:340px;
+    opacity:1;
+    padding-top:26px;
+    padding-bottom:24px;
+    margin-top:26px;
+  }
+  .bank-card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:34px;
+  }
+  .bank-name{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--maroon-deep);
+    letter-spacing:.02em;
+  }
+  .chip{
+    width:38px;height:28px;
+    border-radius:5px;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  }
+  .bank-number{
+    font-family:'Playfair Display', serif;
+    font-size:23px;
+    letter-spacing:.06em;
+    color:var(--charcoal);
+    margin-bottom:10px;
+  }
+  .bank-owner{
+    font-size:14px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#6b6152;
+    margin-bottom:18px;
+  }
   .copy-btn{
     padding:9px 20px;
     border:1px solid var(--maroon);
@@ -539,10 +600,17 @@
     <div class="eyebrow">Tanda Kasih</div>
     <div class="divider"></div>
     <p>Doa restu Anda adalah karunia yang sangat berarti. Jika ingin memberi tanda kasih, dapat melalui:</p>
-    <div class="gift-card">
-      <div class="gift-bank">Bank BCA</div>
-      <div class="gift-number" id="bankNumber">1234567890</div>
-      <div class="gift-owner">a.n. Juliani Safitri</div>
+    <button class="gift-btn" id="giftToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8V21M3 12h18M7.5 8a2.5 2.5 0 010-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 010 5"/></svg>
+      Klik Disini
+    </button>
+    <div class="bank-card" id="bankCard">
+      <div class="bank-card-top">
+        <div class="bank-name">BRI</div>
+        <div class="chip"></div>
+      </div>
+      <div class="bank-number" id="bankNumber">0986 0103 2098 538</div>
+      <div class="bank-owner">Juliani Safitri</div>
       <button class="copy-btn" onclick="copyNumber()">Salin Nomor Rekening</button>
     </div>
   </section>
@@ -643,7 +711,7 @@
 
   // ---- Copy bank number ----
   function copyNumber(){
-    const num = document.getElementById('bankNumber').textContent;
+    const num = document.getElementById('bankNumber').textContent.replace(/\s/g,'');
     navigator.clipboard.writeText(num).then(()=>{
       const btn = document.querySelector('.copy-btn');
       const original = btn.textContent;
@@ -651,6 +719,13 @@
       setTimeout(()=> btn.textContent = original, 1800);
     });
   }
+
+  // ---- Gift card toggle ----
+  const giftToggle = document.getElementById('giftToggle');
+  const bankCard = document.getElementById('bankCard');
+  giftToggle.addEventListener('click', () => {
+    bankCard.classList.toggle('show');
+  });
 
   // ---- RSVP (stored locally in this browser only — see README for real backend options) ----
   const STORAGE_KEY = 'wedding_wishes_dhiya_raka';
